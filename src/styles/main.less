@@ -85,17 +85,6 @@ section {
     background-color: @corDoHover;
 }
 
-/* @media screen and (max-width: 767px) */
-@media @breakpointTablet {
-    .products {
-        display: block;
-    }
-
-    .product-item  {
-        margin-bottom: 32px;
-    }
-}
-
 /* @media screen and (max-width: 1023px) */
 @media @breakpointMobile {
     .container {
@@ -105,5 +94,17 @@ section {
     .products {
         grid-template-columns: repeat(2, 48.5%);
         column-gap: 3%;
+    }
+}
+
+
+/* @media screen and (max-width: 767px) */
+@media @breakpointTablet {
+    .products {
+        display: block;
+    }
+
+    .product-item  {
+        margin-bottom: 32px;
     }
 }

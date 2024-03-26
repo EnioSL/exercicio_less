@@ -1,3 +1,8 @@
+@import "variaveis.less";
+@breakpointMobile: ~"(max-width: 767px)";
+@breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
+
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +11,7 @@
 }
 
 body {
-    background-color: #f5f6fa;
+    background-color: @corDeFundo;
 }
 
 li {
@@ -20,7 +25,7 @@ li {
 }
 
 header {
-    background-color: #182C61;
+    background-color: @corDoHeader;
     position: sticky;
     top: 0;
     left: 0;
@@ -43,7 +48,7 @@ header .container {
 }
 
 .menu li a {
-    color: #fff;
+    color: @corDoTexto;
     text-decoration: none;
 }
 
@@ -67,8 +72,8 @@ section {
 
 .product-button {
     display: block;
-    background-color: #44bd32;
-    color: #fff;
+    background-color: @corDoBotao;
+    color: @corDoTexto;
     text-align: center;
     padding: 8px 0;
     border-radius: 8px;
@@ -77,10 +82,22 @@ section {
 }
 
 .product-button:hover {
-    background-color: #4cd137;
+    background-color: @corDoHover;
 }
 
-@media screen and (max-width: 1023px) {
+/* @media screen and (max-width: 767px) */
+@media @breakpointTablet {
+    .products {
+        display: block;
+    }
+
+    .product-item  {
+        margin-bottom: 32px;
+    }
+}
+
+/* @media screen and (max-width: 1023px) */
+@media @breakpointMobile {
     .container {
         max-width: 80%;
     }
@@ -88,15 +105,5 @@ section {
     .products {
         grid-template-columns: repeat(2, 48.5%);
         column-gap: 3%;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .products {
-        display: block;
-    }
-
-    .product-item  {
-        margin-bottom: 32px;
     }
 }
